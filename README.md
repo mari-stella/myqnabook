@@ -17,9 +17,14 @@
 ### 포트 점유중인 task 알아내기
 netstat -ano | findstr "8082"
 ### 포트 점유중인 task 죽이기
-taskill /pid 19972 /f
+taskkill /pid 19972 /f
 
 # 프로젝트 관련
 ## book
 ### 책등록 
-http POST http://localhost:8082/books bookId=1 title=testbook stock=100
+#### books 바로 호출
+http POST http://localhost:8082/books title=testbook stock=100
+bookId 관련...참고사이트
+https://lion-king.tistory.com/entry/JPA-JPA-Id-GenerationTypeAUTO-IDENTITY
+#### gateway 호출
+http POST http://localhost:8088/books title=testbook stock=100
